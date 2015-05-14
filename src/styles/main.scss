@@ -1,7 +1,73 @@
 @import 'reset';
 
+$red: red;
+
 html, body {
     margin:0px;
     padding:0px;
 }
 
+#main {
+	border:1px $red solid;
+}
+
+header {
+    background: #ccc;
+    .header_link {
+        display: inline-block;
+        height: 80px;
+        line-height: 80px;
+        border-right: #eee;
+        padding: 0 25px;
+        text-decoration: none;
+        color: white;
+        font-size: 22px;
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+.header_opener {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: url("../views/menu.png") no-repeat;
+    background-size: 40px 25px;
+    display: block;
+    width: 40px;
+    height: 25px;
+    border: none;
+    z-index: 20;
+}
+.menu {
+    background: #eee;
+    margin: auto;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 0px;
+    text-align: center;
+    z-index: 10;
+    -webkit-transition: top 0.3s linear;
+    /* Saf3.2+, Chrome */
+    -moz-transition: top 0.3s linear;
+    /* FF4+ */
+    -o-transition: top 0.3s linear;
+    /* Opera 10.5+ */
+    transition: top 0.3s linear;
+}
+
+.menu--open {
+  top: 80px;
+}
+.menu--closed {
+  top: 0px;
+}
+
+.form {
+    text-align:left;
+    width: 800px;
+    border:1px $red dotted;
+}
