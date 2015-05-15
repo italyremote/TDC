@@ -1,6 +1,7 @@
 @import 'reset';
 
 $red: red;
+$lineh: 24px;
 
 
 html, body {
@@ -71,20 +72,21 @@ header {
 .form {
     text-align:left;
     width: 800px;
+    font-size:12px;
 }
 .tl {
-    height:30px;
+    height: $lineh;
+    line-height: $lineh;
     width:200px;
     clear:both;
     float:left;
     background:#ccc;
     color:white;
-    line-height: 30px;
     padding-left:10px;
     border-bottom:1px #333 dotted;
 }
 .ti {
-    height:30px;
+    height: $lineh;
     float:left;
     margin-left:20px;
     border-bottom:1px #333 dotted;

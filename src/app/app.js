@@ -44,6 +44,7 @@
             "banca" : new Tax( { "name": "Banca", "value":0, "detrazione":50 } ),
             "benistr" : new Tax( { "name": "Beni Strum.", "value":0, "detrazione":100 } ),
             "benzina" : new Tax( { "name": "Benzina", "value":0, "detrazione":40 } ),
+            "bicicletta" : new Tax( { "name": "Bicicletta", "value":0, "detrazione":100 } ),
             "bollo" : new Tax( { "name": "Bollo Auto", "value":0, "detrazione":40 } ),
             "corsi" : new Tax( { "name": "Corsi Agg.", "value":0, "detrazione":50 } ),
             "energia" : new Tax( { "name": "Energia El.", "value":0, "detrazione":50 } ),
@@ -52,7 +53,12 @@
             "leasing" : new Tax( { "name": "Leasing Attr.Mob.Macc.", "value":0, "detrazione":100 } ),
             "pasti" : new Tax( { "name": "Pasti Rist. Mense", "value":0, "detrazione":75 } ),
             "rappresentanza" : new Tax( { "name": "Pasti Rappr.", "value":0, "detrazione":100 } ),
-            "software" : new Tax( { "name": "Software", "value":0, "detrazione":100 } )
+            "software" : new Tax( { "name": "Software", "value":0, "detrazione":100 } ),
+            "condominio" : new Tax( { "name": "Sp.Condominiali", "value":0, "detrazione":50 } ),
+            "concessione" : new Tax( { "name": "Tax Concessione Gov.", "value":0, "detrazione":100 } ),
+            "telefono" : new Tax( { "name": "Telefono Telefonino", "value":0, "detrazione":80 } ),
+            "veicolo" : new Tax( { "name": "Veicolo", "value":0, "detrazione":40 } ),
+            "viaggi" : new Tax( { "name": "V. Treno Aereo Taxi Pedaggi", "value":0, "detrazione":100 } )
         };
         /*
         $scope.tax = new Tax();
