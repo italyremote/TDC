@@ -9,6 +9,7 @@
 	<title>italyremote TDC</title>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
 
     <!-- #local --> <link rel="stylesheet" href="assets/style.css" />
 
@@ -43,10 +44,16 @@
 
         <div class="container" >
             <div class="form">
-                <span ng-bind="taxes.affitto.name"></span>
-                <span ng-bind="taxes.affitto.detrazione"></span>
-                <input type="text" ng-model="taxes.affitto.value" />
-                <button class="btn" ng-click="taxes.affitto.update()">update</button>
+                <div ng-repeat="(key, value) in taxes">
+                    <div class="tl">
+                        <span ng-bind="value.name"></span>
+                        <span ng-bind="value.detrazione"></span>
+                    </div>
+                    <div class="ti">
+                        <input type="text" ng-model="value.value" />
+                        <button class="btn btn-default btn-xs" ng-click="value.update()">update</button>
+                    </div>
+                </div>
             </div>
             <div ng-view></div>
 

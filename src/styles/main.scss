@@ -2,7 +2,9 @@
 
 $red: red;
 
+
 html, body {
+    font-family: 'Roboto Condensed', sans-serif;
     margin:0px;
     padding:0px;
 }
@@ -69,5 +71,21 @@ header {
 .form {
     text-align:left;
     width: 800px;
-    border:1px $red dotted;
+}
+.tl {
+    height:30px;
+    width:200px;
+    clear:both;
+    float:left;
+    background:#ccc;
+    color:white;
+    line-height: 30px;
+    padding-left:10px;
+    border-bottom:1px #333 dotted;
+}
+.ti {
+    height:30px;
+    float:left;
+    margin-left:20px;
+    border-bottom:1px #333 dotted;
 }
