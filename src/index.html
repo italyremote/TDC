@@ -51,7 +51,20 @@
                     </div>
                     <div class="ti">
                         <input type="text" ng-model="value.value" />
-                        <button class="btn btn-default btn-xs" ng-click="value.update()">update</button>
+                        <!-- <button class="btn btn-default btn-xs" ng-click="value.update()">_u_</button> -->
+                    </div>
+                </div>
+                <button class="clear btn btn-default btn-xs" ng-click="update()">update</button>
+
+                <div id="aliquote">
+                    <p>
+                        <span class="u">TOTALE DETRAIBILE</span> <span ng-bind="total"></span> &euro;
+                    </p>
+                    <br/>
+                    <div ng-repeat="(key, value) in aliquote">
+                        da <span class="valore" ng-bind="value.da"></span> a
+                        <span class="valore" ng-bind="value.a"></span> - <span ng-bind="value.perc"></span>% -
+                        <span class="detrazione" ng-bind="value.detrazione"></span> &euro;
                     </div>
                 </div>
             </div>

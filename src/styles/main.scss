@@ -70,6 +70,7 @@ header {
 }
 
 .form {
+    margin-top:20px;
     text-align:left;
     width: 800px;
     font-size:12px;
@@ -91,3 +92,23 @@ header {
     margin-left:20px;
     border-bottom:1px #333 dotted;
 }
+.clear {
+    clear:both;
+}
+.u {
+    text-decoration: underline;
+}
+    #aliquote {
+        position: absolute;
+        right: 0;
+        top: 100px;
+        border:1px $red dotted;
+        padding:10px;
+    }
+    .valore {
+        color:royalblue;
+    }
+    .detrazione {
+        font-weight: 300;
+        color:red;
+    }

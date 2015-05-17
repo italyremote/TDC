@@ -10,7 +10,7 @@
     spApp.factory('Tax',['$http', function($http){
         function Tax(taxData) {
             if (taxData) {
-                console.log('costruttore?'+JSON.stringify(taxData));
+                // console.log('costruttore?'+JSON.stringify(taxData));
                 this.setData(taxData);
             }
         }
@@ -21,20 +21,44 @@
             setName: function(name) {
                 console.log('set name');
                 this.setData({ "name": name });
-            },
+            }
+            /*,
             update: function() {
                 console.log('name: '+this.name+' value: '+this.value);
             }
+            */
         };
         return Tax;
+    }]);
+    //
+    // Aliquota Model
+    //
+    spApp.factory('Aliquota',['$http', function($http){
+        function Aliquota(aliquotaData) {
+            if (aliquotaData) {
+                this.setData(aliquotaData);
+            }
+        }
+        Aliquota.prototype = {
+            setData: function(aliquotaData) {
+                angular.extend(this, aliquotaData);
+            }
+        };
+        return Aliquota;
     }]);
 
     //
     // Controller Main
     //
-    spApp.controller( "Main", [ '$scope', 'Tax', function($scope, Tax) {
+    spApp.controller( "Main", [ '$scope', 'Tax', 'Aliquota', function($scope, Tax, Aliquota) {
 		$scope.menuIsOpen = false;
-
+        $scope.aliquote = {
+            "0" : new Aliquota( { "da":0, "a":15000, "perc":23 } ),
+            "15" : new Aliquota( { "da":15000, "a":28000, "perc":27 } ),
+            "28" : new Aliquota( { "da":28000, "a":55000, "perc":38 } ),
+            "55" : new Aliquota( { "da":55000, "a":75000, "perc":41 } ),
+            "75" : new Aliquota( { "da":75000, "a":1000000, "perc":43 } )
+        };
         $scope.taxes = {
             "affitto" : new Tax( { "name": "Affitto", "value":0, "detrazione":50 } ),
             "alberghi" : new Tax( { "name": "Alberghi", "value":0, "detrazione":75 } ),
@@ -64,6 +88,19 @@
         $scope.tax = new Tax();
         $scope.tax.setData({ "name":"prova" });
         */
+        $scope.update = function() {
+            var total = 0;
+            for(var t in $scope.taxes) {
+                if ($scope.taxes[t].value!==0) {
+                    total += $scope.taxes[t].value * $scope.taxes[t].detrazione / 100;
+                }
+            }
+            $scope.total = total;
+            for(var a in $scope.aliquote) {
+                $scope.aliquote[a].detrazione = $scope.aliquote[a].perc * total / 100;
+            }
+        };
+        $scope.total = 0;
         $scope.toggle = function(e) {
             $scope.menuIsOpen = !$scope.menuIsOpen;
         };
