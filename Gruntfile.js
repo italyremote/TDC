@@ -13,6 +13,8 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-html2js');
 	grunt.loadNpmTasks('grunt-ngmin');
 
+	grunt.loadNpmTasks('grunt-gh-pages');
+
 	var usrConfig = require('./config.js');
 
 	var taskConfig = {
@@ -137,6 +139,13 @@ module.exports = function (grunt) {
 				],
 				tasks: [ 'sass', 'concat:build_css', 'cssmin:compile_css' ]
 			}
+		},
+
+		'gh-pages': {
+			options: {
+				base: 'dist/src'
+			},
+			src: ['**']
 		}
 
 		// -- out
@@ -153,4 +162,5 @@ module.exports = function (grunt) {
 		'sass', 'concat', 'cssmin'
 	]);
 	grunt.registerTask( 'default', [ 'build' ] );
+	grunt.registerTask('deploy', ['default', 'gh-pages']);
 };
