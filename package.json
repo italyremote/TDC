@@ -1,0 +1,30 @@
+{
+  "author": "carlo 'blackout' denaro",
+  "name": "TDC",
+  "version": "0.0.1",
+  "homepage": "https://github.com/italyremote/TDC",
+  "licenses": {
+    "type": "GPL3",
+    "url": "https://raw.githubusercontent.com/GrayHats/ngbp-onepage/master/LICENSE"
+  },
+  "bugs": "https://github.com/italyremote/TDC/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/italyremote/TDC.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-clean": "^0.4.1",
+    "grunt-contrib-concat": "^0.3.0",
+    "grunt-contrib-copy": "^0.4.1",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-jshint": "^0.4.3",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-uglify": "^0.2.7",
+    "grunt-contrib-watch": "^0.4.4",
+    "grunt-gh-pages": "^0.10.0",
+    "grunt-html2js": "^0.1.9",
+    "grunt-ngmin": "0.0.2"
+  }
+}
